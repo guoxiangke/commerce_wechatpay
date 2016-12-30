@@ -332,7 +332,7 @@ function commerce_wechatpay_checkout_mp_handler ($data, $class, $order_id, &$for
 
   watchdog('commerce_wechatpay', 'Talking to wechatpay with json parameters: %json', array('%json' => $jsParms));
 
-  $js_process_function = commerce_wechatpay_get_js_function();
+  $js_process_function = commerce_wechatpay_get_js_process_function();
   drupal_add_js($js_process_function.'('.$jsParms.', "'.$data['return_success_url'].'", "'.$data['return_failure_url'].'");', 'inline');
 }
 
